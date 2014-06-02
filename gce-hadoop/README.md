@@ -1,3 +1,5 @@
+__NOTE: This repo was cloned from the lovely people at [https://github.com/GoogleCloudPlatform/compute-hadoop-java-python](https://github.com/GoogleCloudPlatform/compute-hadoop-java-python)__
+
 compute-hadoop-java-python
 ==========================
 
