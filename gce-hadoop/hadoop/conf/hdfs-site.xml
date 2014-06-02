@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Leave the mountpoint alone (other scripts are hardcoded to use this), but
+     feel free to tweak the HDFS replication value -->
+
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dfs.data.dir</name>
+    <value>/mnt/hadoop/dfs</value>
+  </property>
+  <property>
+    <name>dfs.block.size</name>
+    <value>134217728</value>
+  </property>
+  <property>
+    <name>dfs.namenode.handler.count</name>
+    <value>40</value>
+  </property>
+</configuration>
