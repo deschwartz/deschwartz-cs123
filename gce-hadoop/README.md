@@ -1,5 +1,7 @@
 __NOTE: This repo was cloned from the lovely people at [https://github.com/GoogleCloudPlatform/compute-hadoop-java-python](https://github.com/GoogleCloudPlatform/compute-hadoop-java-python)__
 
+I have made some changes to this README to explain how to run my particular MapReduce code (see "Running MapReduce jobs").
+
 compute-hadoop-java-python
 ==========================
 
@@ -87,45 +89,39 @@ The following describes what the above scripts do:
 
 # Running MapReduce jobs #
 
-To run a TeraSort benchmark, run the following:
 
-Generate 1TB of data to sort:
-
-	$ ./tools/job_terasort.py 1
-
-Sort the data:
-
-	$ ./tools/job_terasort.py 2
-
-Validate the sort:
-
-	$ ./tools/job_terasort.py 3
-
-Watch progress here through Hadoop's UI
-
-	$ ./tools/ui_links.py
-
-The following describes what the above scripts do:
-
-To import data:
+In general, to import data:
 
 1. The user sends upload requests to the coordinator, specifying a public web
    URL or a Google Storage URI of some input data.
 2. The coordinator forwards this request to a Hadoop instance, then returns an
    operation object, which the user can poll for progress.
 3. A Hadoop instance pushes the input from the web/GS into HDFS.
-To run jobs:
+
+In general, to run jobs:
 
 4. The user sends a request to begin a MapReduce job to the coordinator,
    uploading the JAR file using the above process.
 5. The user can poll the status of Hadoop jobs, or set up an SSH tunnel to
    access the web UI of the Hadoop JobTracker directly.
-To export data:
+
+In general, to export data:
 
 6. After a job is complete, the user can request that the coordinator exports
    data from HDFS into Google Storage.
 7. As before, the coordinator forwards this request to a Hadoop instance, then
    returns a pollable operation.
+
+In my code:
+
+	$ ./tools/job_ka.py 
+
+imports the problem data, imports my MapReduce JAR, and starts the job.
+
+After the job is done, the data is exported back to Google Storage from HDFS by:
+
+	$ ./tools/job_ka_finish.py
+
 
 # Performing other operations #
 
