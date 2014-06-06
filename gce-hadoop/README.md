@@ -120,7 +120,7 @@ imports the problem data, imports my MapReduce JAR, and starts the job.
 
 After the job is done, the data is exported back to Google Storage from HDFS by:
 
-	$ ./tools/job_ka_finish.py
+	$ ./tools/download_results.py /hdfs/path /gs/path
 
 
 # Performing other operations #
@@ -131,10 +131,6 @@ To add more slaves to an existing cluster:
 
 Although the slaves should become available to existing MapReduce jobs, data in
 HDFS will not automatically shifted to them without running a rebalancer.
-
-To export results from HDFS into Google Storage:
-
-	$ ./tools/download_results.py /hdfs/path /gs/path
 
 To destroy your cluster:
 
