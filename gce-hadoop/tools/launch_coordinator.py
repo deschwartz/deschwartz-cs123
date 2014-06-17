@@ -29,7 +29,7 @@ import util
 def main():
   common.setup()
 
-  # CHANGE ME
+  # DS: default parameters work for me (I think)
   zone = 'us-central1-a'
   machtype = 'n1-standard-4-d'
   image = 'projects/google/images/ubuntu-12-04-v20120621'

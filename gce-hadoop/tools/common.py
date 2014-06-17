@@ -31,9 +31,8 @@ import util
 
 
 def setup():
-  # CHANGE ME
-  cfg.set_bucket('GS-bucket')
-  cfg.project_id = 'compute-project-name'
+  cfg.set_bucket('ka_data')
+  cfg.project_id = 'leafy-galaxy-601'
 
   if os.path.exists('secret'):
     cfg.secret = open('secret').read().rstrip()
